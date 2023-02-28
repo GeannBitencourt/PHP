@@ -1,0 +1,15 @@
+<?php
+include("conexao.php");
+
+$sql = "select * from contrato";
+$query = mysqli_query($conn, $sql);
+
+// O CODIGO ABAIXO FOI CORRIGIDO POR: GEANN ÁLEAIX BITENCOURT
+if(!$query) {
+    die("Falha na consulta: " . mysqli_error($conn));
+    }
+    if(mysqli_num_rows($query) < 1) {
+    echo "Não foram encontrados resultados";
+    mysqli_close($conn);
+    }
+    ?>
